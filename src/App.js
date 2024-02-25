@@ -1,24 +1,18 @@
 import logo from './logo.svg';
 import './App.css';
+import Cards from './components/Cards';
+import data from './components/data';
+import Card from './components/Card';
+import { useState } from 'react';
 
 function App() {
+  const[tours, removeTour] = useState(data);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+        <h1>Travel Agent</h1>
+        <Cards tours = {tours}></Cards>
     </div>
+    
   );
 }
 
