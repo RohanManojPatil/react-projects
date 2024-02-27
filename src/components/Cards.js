@@ -1,11 +1,15 @@
 import React from "react";
 import Card from './Card';
 
-function Cards({ tours }) {
+function Cards({ tours, remove}) {
+    function handleRemove(id)
+    {
+        remove(id)
+    }
     return (
-        <div>
+        <div className="card-container">
             {tours.map((tour) => (
-                <Card key={tour.id} tour={tour} />
+                <Card key={tour.id} tour={tour} remove = {handleRemove}/>
             ))}
         </div>
     );
