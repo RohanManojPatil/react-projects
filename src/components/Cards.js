@@ -7,11 +7,15 @@ function Cards({ tours, remove}) {
         remove(id)
     }
     return (
-        <div className="card-container">
+        <div>
+            <h1 className="title">Travel Agent</h1>
+            <div className="card-container">
             {tours.map((tour) => (
                 <Card key={tour.id} tour={tour} remove = {handleRemove}/>
             ))}
         </div>
+        </div>
+        
     );
 }
 

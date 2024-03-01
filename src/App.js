@@ -8,9 +8,18 @@ import { useState } from 'react';
 function App() {
   const[tours, setTour] = useState(data);
 
+  function refreshPage()
+  {
+      setTour(data);
+  }
   if(tours.length <= 0)
   {
-      alert("NO Tours are left");
+    return (
+    <div className='refreshPage'>
+        <h1 className='noTour'> No Tours left</h1>
+        <button className='refresh' onClick={refreshPage}>Go Back</button>
+`    </div>
+    );
   }
   function removeData(id) {
     // Filter out the tour with the specified id
@@ -21,7 +30,6 @@ function App() {
   
   return (
     <div>
-        <h1 className="title">Travel Agent</h1>
         <Cards tours = {tours} remove = {removeData}></Cards>
     </div>
     
