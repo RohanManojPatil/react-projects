@@ -31,13 +31,35 @@ border-radius: 15px;
 padding: 3px 10px;
 }
 
-.card-container{
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  margin: 1px auto;
-  max-width: 1030px;  
+@media screen and (min-width:1293px)
+{
+  .card-container{
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(3, 1fr);
+    margin: 1px auto;
+    max-width: 1030px;  
+  } 
 }
 
+@media screen and (min-width:864px)
+{
+  .card-container{
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(2, 1fr);
+    margin: 1px auto;
+    max-width: 1030px;  
+  } 
+}
+
+.card-container{
+  display: grid;
+  justify-content: center;
+  grid-template-columns: 1 1fr;
+  margin: 1px auto;
+  max-width: 1030px;  
+} 
 .mainCard{
   display: flex;
   flex-direction: column;
